@@ -1,12 +1,24 @@
-import { BotaoApagar, BotaoCurtir, ContainerDosBotões, ImagemDoUsuario, InfosDoUsuario, NomeDoUsuario, PostContainer, TextoDaPostagem, ToggleDosComentarios } from "./postStyle";
+import {
+  BotaoApagar,
+  BotaoCurtir,
+  ContainerDosBotões,
+  ImagemDoUsuario,
+  InfosDoUsuario,
+  NomeDoUsuario,
+  PostContainer,
+  TextoDaPostagem,
+  ToggleDosComentarios,
+} from "./postStyle";
 import Comentario from "../Comentario/Comentario.js";
 
 const Post = (props) => {
-
   return (
     <PostContainer>
       <InfosDoUsuario>
-        <ImagemDoUsuario src={props.post.imageDoUsuario} alt="imagem do usuario" />
+        <ImagemDoUsuario
+          src={props.post.imageDoUsuario}
+          alt="imagem do usuario"
+        />
         <NomeDoUsuario>{props.post.usuario}</NomeDoUsuario>
       </InfosDoUsuario>
 
@@ -14,14 +26,16 @@ const Post = (props) => {
       <ContainerDosBotões>
         <BotaoCurtir
           onClick={() => props.alterarCurtida(props.post.id)}
-          value={props.post.curtida ? "Descurtir" : "Curtir"}
+          value={props.post.curtido ? "Descurtir" : "Curtir"}
         >
-          {props.post.curtida ? "Descurtir" : "Curtir"}
+          {props.post.curtido ? "Descurtir" : "Curtir"}
         </BotaoCurtir>
-        <BotaoApagar onClick={() => props.apagarPost(props.post.id)}>Apagar</BotaoApagar>
+        <BotaoApagar onClick={() => props.apagarPost(props.post.id)}>
+          Apagar
+        </BotaoApagar>
       </ContainerDosBotões>
 
-      <ToggleDosComentarios >
+      <ToggleDosComentarios>
         <summary>Comentários</summary>
         <Comentario
           postId={props.post.id}
@@ -30,9 +44,8 @@ const Post = (props) => {
           onChangeComentario={props.onChangeComentario}
         />
       </ToggleDosComentarios>
-
     </PostContainer>
   );
 };
 
-export default Post
+export default Post;
