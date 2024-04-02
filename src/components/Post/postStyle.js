@@ -10,8 +10,8 @@ export const PostContainer = styled.section`
    
 `
 export const InfosDoUsuario = styled.div`
-        display: flex;
-        align-items: center;
+    display: flex;
+    align-items: center;
 `
 
 export const ImagemDoUsuario = styled.img`
@@ -32,18 +32,15 @@ export const TextoDaPostagem = styled.textarea`
     font-size: 1rem;
     padding: 10px;
     resize: none;
-    
-
 `
 
 export const ContainerDosBotões = styled.div`
-display: flex;
-margin: 10px;
-gap: 10px;
-
+    display: flex;
+    margin: 10px;
+    gap: 10px;
 `
 
-export const toggleDosComentarios = styled.details`
+export const ToggleDosComentarios = styled.details`
     margin: 10px;
     color: gray;
 `

@@ -4,7 +4,6 @@ import TelaDePostagem from "./components/TelaDePostagem/TelaDePostagem";
 
 export default function App() {
 
-
   return (
     <div>
       <GlobalStyle />

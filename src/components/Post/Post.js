@@ -1,8 +1,7 @@
-import { BotaoApagar, BotaoCurtir, ContainerDosBotões, ImagemDoUsuario, InfosDoUsuario, NomeDoUsuario, PostContainer, TextoDaPostagem, toggleDosComentarios } from "./postStyle";
-import  {Comentario} from "../Comentario/Comentario";
+import { BotaoApagar, BotaoCurtir, ContainerDosBotões, ImagemDoUsuario, InfosDoUsuario, NomeDoUsuario, PostContainer, TextoDaPostagem, ToggleDosComentarios } from "./postStyle";
+import Comentario from "../Comentario/Comentario.js";
 
-
- const Post = (props) => {
+const Post = (props) => {
 
   return (
     <PostContainer>
@@ -22,7 +21,7 @@ import  {Comentario} from "../Comentario/Comentario";
         <BotaoApagar onClick={() => props.apagarPost(props.post.id)}>Apagar</BotaoApagar>
       </ContainerDosBotões>
 
-      <toggleDosComentarios >
+      <ToggleDosComentarios >
         <summary>Comentários</summary>
         <Comentario
           postId={props.post.id}
@@ -30,9 +29,10 @@ import  {Comentario} from "../Comentario/Comentario";
           adicionaComentario={props.adicionaComentario}
           onChangeComentario={props.onChangeComentario}
         />
-      </toggleDosComentarios >
+      </ToggleDosComentarios>
 
     </PostContainer>
   );
 };
+
 export default Post

@@ -1,17 +1,17 @@
 import { useState } from "react";
-import {Post} from "../Post/Post";
+import Post from "../Post/Post";
 import { BotaoAdicionar, ContainerDePostagem, ContainerDosInputs, DivisorDaTela, Header } from "./telaDePostagemStyle";
 
 const TelaDePostagem = () => {
-    const [textoNovoPost, setTextoNovoPost] = useState("")
     const [nomeDoUsuario, setNomeDoUsuario] = useState("")
+    const [textoNovoPost, setTextoNovoPost] = useState("")
     const [posts, setPost] = useState([])
 
     const onChangeUsuario = (event) => {
-        setNomeDoUsuario(event.value)
+        setNomeDoUsuario(event.target.value)
     }
     const onChangeTextoNovoPost = (event) => {
-        setTextoNovoPost(event.target.value);
+        setTextoNovoPost(event.target.value)
     }
     const limparInputs = () => {
         setTextoNovoPost("");
@@ -42,7 +42,6 @@ const TelaDePostagem = () => {
         })
 
         setPost(novaListaDePosts)
-
     }
 
     const alterarCurtida = (id) => {
@@ -77,8 +76,6 @@ const TelaDePostagem = () => {
 
     }
 
-
-
     const listaDePosts = posts.map((post) => {
         return <Post
             key={post.id}
@@ -105,12 +102,12 @@ const TelaDePostagem = () => {
                         placeholder="nome do usuário"
                     />
 
-                    <label htmlFor="postagem"> Postagem: </label>
+                    <label htmlFor="postagem">Postagem: </label>
                     <textarea
-                        id="postagem"
+                        name="postagem"
                         type="text"
-                        onchange={onChangeTextoNovoPost}
                         value={textoNovoPost}
+                        onchange={onChangeTextoNovoPost}
                         placeholder="texto da postagem"
                     />
 

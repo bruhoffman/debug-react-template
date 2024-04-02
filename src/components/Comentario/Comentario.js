@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BotaoComentar, ContainerDeComentarios, InputDoComentario, SessaoDeComentario } from './comentarioStyle'
 
- function Comentario(props) {
+const Comentario = (props) => {
     const [comentario, setComentario] = useState("")
 
     const onChangeComentario = (e) => {
